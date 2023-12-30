@@ -28,9 +28,9 @@ const buttonStyles = cva(["transition-colors"], {
   },
 });
 
-export default function Button({ variant, size, className, children }) {
+export default function Button({ variant, size, className, children, ...props }) {
   return (
-    <button className={twMerge(buttonStyles({ variant, size }), className)}>
+    <button {...props} className={twMerge(buttonStyles({ variant, size }), className)}>
       {children}
     </button>
   );
