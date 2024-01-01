@@ -33,7 +33,7 @@ export default function CategoryPills({ categories, selectedCategory, onSelect }
   },[categories, translate])
 
   return (
-    <div ref={containerRef} className="border overflow-x-hidden relative">
+    <div ref={containerRef} className="overflow-x-hidden relative">
       {/* 1. Category pills */}
       
       <div 
