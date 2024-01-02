@@ -1,25 +1,10 @@
 /* eslint-disable react/prop-types */
-import { Home, Clapperboard, Repeat, Library, ChevronUp, ChevronDown, History } from "lucide-react";
+import { Home, Clapperboard, Repeat, Library, ChevronUp, ChevronDown, History, PlaySquare, Clock, Lightbulb, ThumbsUp, ListVideo, Flame, ShoppingBag, Music2, Film, Radio, Gamepad2,  Newspaper, Trophy, Shirt, Podcast } from "lucide-react";
 import Button, { buttonStyles } from "../components/Button";
 import { twMerge } from "tailwind-merge";
 import { Children } from "react";
 import { useState } from "react";
-import { PlaySquare } from "lucide-react";
-import { Clock } from "lucide-react";
-import { Lightbulb } from "lucide-react";
-import { ThumbsUp } from "lucide-react";
 import { playlists, subscriptions } from "../data/sidebar";
-import { ListVideo } from "lucide-react";
-import { Flame } from "lucide-react";
-import { ShoppingBag } from "lucide-react";
-import { Music2 } from "lucide-react";
-import { Film } from "lucide-react";
-import { Radio } from "lucide-react";
-import { Gamepad2 } from "lucide-react";
-import { Newspaper } from "lucide-react";
-import { Trophy } from "lucide-react";
-import { Shirt } from "lucide-react";
-import { Podcast } from "lucide-react";
 import { useSidebarContext } from "../contexts/SidebarContext";
 import { PageHeaderFirstSection } from "./PageHeader";
 

@@ -5,6 +5,7 @@ import { createContext, useState } from "react";
 
 const SidebarContext = createContext(null)
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useSidebarContext() {
   const value = useContext(SidebarContext)
 
