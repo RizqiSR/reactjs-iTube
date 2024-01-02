@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import { Menu, Upload, Bell, User, Mic, Search } from "lucide-react"
 import logo from "../assets/logo.png"
 import Button from "../components/Button"
 import { useState } from "react"
 import { ArrowLeft } from "lucide-react"
+import { useSidebarContext } from "../contexts/SidebarContext"
 
 export default function PageHeader() {
   const [showFullWidthSearch, setshowFullWidthSearch] = useState(false)
@@ -10,14 +12,7 @@ export default function PageHeader() {
   return (
     // 1. Grup header 1: hamburger menu, logo
     <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
-      <div className={`gap-4 items-center flex-shrink-0 ${showFullWidthSearch ? "hidden" : "flex"}`}>
-        <Button variant="ghost" size="icon" >
-          <Menu />
-        </Button>
-        <a href="/">
-          <img src={logo} alt="WebTube" className="h-6" />
-        </a>
-      </div>
+      <PageHeaderFirstSection hidden={showFullWidthSearch} />
 
       {/* 2. Grup header 2: search bar */}
       <form className={`gap-4 flex-grow justify-center ${showFullWidthSearch ? "flex" : "hidden md:flex"}`}>
@@ -57,5 +52,20 @@ export default function PageHeader() {
       </div>
     </div>
 
+  )
+}
+
+export function PageHeaderFirstSection({ hidden = false }) {
+  const { toggle } = useSidebarContext()
+
+  return (
+    <div className={`gap-4 items-center flex-shrink-0 ${hidden ? "hidden" : "flex"}`}>
+        <Button variant="ghost" size="icon" onClick={toggle} >
+          <Menu />
+        </Button>
+        <a href="/">
+          <img src={logo} alt="WebTube" className="h-6" />
+        </a>
+      </div>
   )
 }
